@@ -30,7 +30,7 @@ def main():
         )
         printf("    logout @~or$& quit -> remove remote origin")
 
-        printf("@!Modifiers$&")
+        printf("\n@!Modifiers$&")
         printf('  -r "https://github.com/example/repo" -> specify the repo')
         printf('  -t "token" -> specify the token')
 
@@ -42,18 +42,19 @@ def main():
 
     url, token = "", ""
 
-    if ARGS.get_modifier_value("r"):
-        url = ARGS.get_modifier_value("r")
-    else:
-        url = input("Repository URL: ")
+    if ARGS.normals[0] == "workspace" and ARGS.normals[1] in ["logout", "quit"]:
+        if ARGS.get_modifier_value("r"):
+            url = ARGS.get_modifier_value("r")
+        else:
+            url = input("Repository URL: ")
 
-    if ARGS.get_modifier_value("t"):
-        token = ARGS.get_modifier_value("t")
-    else:
-        token = input("Github Access Token: ")
+        if ARGS.get_modifier_value("t"):
+            token = ARGS.get_modifier_value("t")
+        else:
+            token = input("Github Access Token: ")
 
-    if not url.startswith("https://github.com"):
-        raise Exception("[Bad URL] Not Github URL")
+        if not url.startswith("https://github.com"):
+            raise Exception("[Bad URL] Not Github URL")
 
     if ARGS.normals[0] == "clone":
         printf(url, token)
