@@ -42,7 +42,7 @@ def main():
 
     url, token = "", ""
 
-    if ARGS.normals[0] == "workspace" and ARGS.normals[1] in ["logout", "quit"]:
+    if ARGS.normals[0] != "workspace" or ARGS.normals[1] not in ["logout", "quit"]:
         if ARGS.get_modifier_value("r"):
             url = ARGS.get_modifier_value("r")
         else:
