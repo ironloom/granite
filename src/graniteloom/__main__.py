@@ -72,7 +72,7 @@ def main():
             token = input("Github Access Token: ")
 
         os.system("git remote rm origin")
-        os.system(f"git remote add {repo}")
+        os.system(f"git remote add origin {repo}")
 
     if ARGS.normals[1] in ["logout", "quit"]:
         os.system("git remote rm origin")
