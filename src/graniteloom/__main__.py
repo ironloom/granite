@@ -6,6 +6,7 @@ import os
 def get_token_repo_url(url: str, token: str) -> str:
     url = url.replace("https://github.com", "https://[< TOKEN >]@github.com")
     url = url.replace("[< TOKEN >]", token)
+    return url
 
 
 def clone_with_token(repo: str, token: str) -> None:
@@ -55,6 +56,7 @@ def main():
         raise Exception("[Bad URL] Not Github URL")
 
     if ARGS.normals[0] == "clone":
+        printf(url, token)
         clone_with_token(url, token)
 
     if ARGS.normals[0] != "workspace":
