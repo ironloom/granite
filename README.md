@@ -5,11 +5,11 @@ Granite is our tool to handle working from foreign devices. It uses [Github Acce
 ## Install ✅
 Use the `pip install` command:
 ```bash
-python -m pip install graniteloom
+python -m pip install --upgrade graniteloom
 ```
 Install the test version:
 ```bash
-python -m pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple graniteloom
+python -m pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple --upgrade graniteloom
 ```
 Once the install is complete, check if it worked:
 ```bash
